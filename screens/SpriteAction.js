@@ -31,10 +31,7 @@ const actions = [
 
 const SpriteActionScreen = ({ route, navigation }) => {
   const { spriteId } = route.params;
-  // const { sprites } = route.params;
   const [selectedSpriteId, setSelectedSpriteId] = useState(spriteId);
-  // let selectedSvg =
-  //   sprites?.find((sprite) => sprite.id == selectedSpriteId)?.svgxml || null;
 
   const [actionItems, setActionItems] = useState([]);
   const [codeItems, setCodeItems] = useState(actions);
@@ -56,14 +53,6 @@ const SpriteActionScreen = ({ route, navigation }) => {
       })
     );
   };
-
-  // if (typeof console !== "undefined") {
-  //   const originalWarn = console.warn;
-  //   console.warn = (...args) => {
-  //     // Uncomment the following line if you want to see some warnings
-  //     // originalWarn(...args);
-  //   };
-  // }
 
   const handleDeleteAction = (itemToDelete) => {
     setActionItems((prev) =>

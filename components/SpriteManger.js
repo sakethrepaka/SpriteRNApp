@@ -19,12 +19,15 @@ export const SpriteManager = ({
             <FontAwesome name="minus-circle" size={30} color="red" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("SpriteAction", {
-                spriteId: sprite.id,
-                selectedSvg: sprite.svgxml,
-              })
-            }
+            onPress={() => {
+              if (sprite.id) {
+                navigation.navigate("SpriteAction", {
+                  spriteId: sprite.id,
+                });
+              } else {
+                console.warn("Invalid sprite data");
+              }
+            }}
           >
             <Text style={styles.addActionButton}>Add Action</Text>
           </TouchableOpacity>

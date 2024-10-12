@@ -439,7 +439,6 @@ export default function HomeScreen({ navigation }) {
         addSprite={addSprite}
         removeSprite={removeSprite}
         navigation={navigation}
-        selectedSvg={selectedSvg}
       />
 
       <Modal
