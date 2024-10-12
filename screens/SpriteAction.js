@@ -31,10 +31,10 @@ const actions = [
 
 const SpriteActionScreen = ({ route, navigation }) => {
   const { spriteId } = route.params;
-  const { sprites } = route.params;
+  // const { sprites } = route.params;
   const [selectedSpriteId, setSelectedSpriteId] = useState(spriteId);
-  let selectedSvg =
-    sprites?.find((sprite) => sprite.id == selectedSpriteId)?.svgxml || null;
+  // let selectedSvg =
+  //   sprites?.find((sprite) => sprite.id == selectedSpriteId)?.svgxml || null;
 
   const [actionItems, setActionItems] = useState([]);
   const [codeItems, setCodeItems] = useState(actions);
@@ -57,13 +57,13 @@ const SpriteActionScreen = ({ route, navigation }) => {
     );
   };
 
-  if (typeof console !== "undefined") {
-    const originalWarn = console.warn;
-    console.warn = (...args) => {
-      // Uncomment the following line if you want to see some warnings
-      // originalWarn(...args);
-    };
-  }
+  // if (typeof console !== "undefined") {
+  //   const originalWarn = console.warn;
+  //   console.warn = (...args) => {
+  //     // Uncomment the following line if you want to see some warnings
+  //     // originalWarn(...args);
+  //   };
+  // }
 
   const handleDeleteAction = (itemToDelete) => {
     setActionItems((prev) =>
@@ -129,12 +129,12 @@ const SpriteActionScreen = ({ route, navigation }) => {
         >
           <View style={{ display: "flex", flexDirection: "row" }}>
             <Text style={styles.actiontitle}>Action</Text>
-            <SvgXml
+            {/* <SvgXml
               style={{ marginLeft: 10 }}
               xml={selectedSvg}
               height="40"
               width="40"
-            ></SvgXml>
+            ></SvgXml> */}
           </View>
           {actionItems.map((item) => (
             <View key={item.id} style={styles.actionItem}>

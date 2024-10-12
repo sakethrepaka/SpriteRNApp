@@ -23,7 +23,6 @@ export const SpriteManager = ({
               navigation.navigate("SpriteAction", {
                 spriteId: sprite.id,
                 selectedSvg: sprite.svgxml,
-                sprites: sprites,
               })
             }
           >
