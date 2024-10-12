@@ -205,7 +205,16 @@ export default function HomeScreen({ navigation }) {
             toValue: 2,
             duration: 500,
             useNativeDriver: false,
-          }).start(() => resolve());
+          }).start(() => {
+            // Reset to normal size after 500ms
+            setTimeout(() => {
+              Animated.timing(sprite.scale, {
+                toValue: 1,
+                duration: 500,
+                useNativeDriver: false,
+              }).start(() => resolve());
+            }, 500); // Duration before resetting to normal size
+          });
           break;
 
         case action.text.includes("Decrease Size"):
@@ -213,7 +222,15 @@ export default function HomeScreen({ navigation }) {
             toValue: 0.5,
             duration: 500,
             useNativeDriver: false,
-          }).start(() => resolve());
+          }).start(() => {
+            setTimeout(() => {
+              Animated.timing(sprite.scale, {
+                toValue: 1,
+                duration: 500,
+                useNativeDriver: false,
+              }).start(() => resolve());
+            }, 500);
+          });
           break;
         case action.text.includes("Random Position"):
           const randomX = Math.floor(Math.random() * 80); // Random X between 0 and 100

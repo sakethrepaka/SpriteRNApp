@@ -15,8 +15,8 @@ import { SvgXml } from "react-native-svg";
 import RNPickerSelect from "react-native-picker-select";
 
 const actions = [
-  "Move X by 50",
-  "Move Y by 50",
+  "Move X by 30",
+  "Move Y by 30",
   "Rotate 360",
   "Go to 0",
   "Random Position",
@@ -56,6 +56,14 @@ const SpriteActionScreen = ({ route, navigation }) => {
       })
     );
   };
+
+  if (typeof console !== "undefined") {
+    const originalWarn = console.warn;
+    console.warn = (...args) => {
+      // Uncomment the following line if you want to see some warnings
+      // originalWarn(...args);
+    };
+  }
 
   const handleDeleteAction = (itemToDelete) => {
     setActionItems((prev) =>
